@@ -1,4 +1,4 @@
-# Password Hash Tool
+# Password and Verify Hash Tool
 
 Ce projet est une application web pour générer des hachages de mots de passe et vérifier des hachages . Elle prends en charge plusieurs algorithmes.
 
