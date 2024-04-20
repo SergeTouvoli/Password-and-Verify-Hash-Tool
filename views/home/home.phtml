@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password hash tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="bg-dark py-3">
+        <div class="container">
+            <h1 class="text-light">Password hash tool</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container mt-5 ">
+                
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="hash-text-tab" data-bs-toggle="tab" data-bs-target="#hash-text" type="button" role="tab" aria-controls=""hash-text" aria-selected="true">Hachage de texte</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="verif-hash-tab" data-bs-toggle="tab" data-bs-target="#verif-hash" type="button" role="tab" aria-controls="verif-hash" aria-selected="false">Verificateur de hash</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+
+                <div class="tab-pane fade show active" id="hash-text" role="tabpanel" aria-labelledby="hash-text-tab">
+                    <h2 class="mb-4 mt-3">Entrez votre texte à hasher</h2>
+
+                    <div class="form-floating mb-3 ">
+                        <select class="form-select" id="hashTypeSelect">
+                            <option value="">Sélectionnez un type de hash</option>
+                            <?php foreach(HASH_TYPES as $hashType) :?>
+                                <option value="<?= $hashType ?>"><?= strtoupper($hashType) ?></option>
+                            <?php endforeach ;?>
+                        </select>
+                        <label for="hashTypeSelect">Type de hash</label>
+                    </div>
+
+                    <div class="form-floating mb-3 ">
+                        <input type="text" class="form-control" disabled id="passwordInput" placeholder="Entrez votre mot de passe">
+                        <label for="passwordInput">Entrez votre texte </label>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="hashResult" class="form-label">Résultat du hash :</label>
+                        <input type="text" readonly class="form-control" id="hashResult">
+                    </div>
+
+                    <div id="message" class="mt-3 text-center fw-bold "></div>
+
+                    <button id="copyResult" class="btn btn-primary mb-3 " disabled>Copier</button>
+
+                </div>
+
+                <div class="tab-pane fade" id="verif-hash" role="tabpanel" aria-labelledby="verif-hash-tab">
+                    <form action="" method="post">
+                        <div class="mb-3">
+                            <label for="textInput" class="form-label">Texte à vérifier:</label>
+                            <input type="text" class="form-control" id="textInput" name="plain_text" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="hashInput" class="form-label">Hash:</label>
+                            <input type="text" class="form-control" id="hashInput" name="hash" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Vérifier</button>
+
+                        <div class="mt-3 fw-bold message text-center"></div>
+
+                    </form>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <footer class="bg-dark py-3 mt-auto">
+        <div class="container">
+            <p class="text-light mb-0">© 2024 Password Hash Tool. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
