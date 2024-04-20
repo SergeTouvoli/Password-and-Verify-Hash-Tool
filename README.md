@@ -4,6 +4,10 @@ Ce projet est une application web pour générer des hachages de mots de passe e
 
 Accessible via : https://sergedev.xyz/password_hash
 
+![Capture d'écran 2024-04-20 151353](https://github.com/SergeTouvoli/password_hash/assets/82214916/4d29b9f1-3623-4dc6-9206-28e88ab1ad55)
+![Capture d'écran 2024-04-20 151420](https://github.com/SergeTouvoli/password_hash/assets/82214916/be3b2b19-950c-4879-ab09-a6badcca30b8)
+
+
 ## Fonctionnalités
 
 - **Hachage de texte :** Choisissez parmi plusieurs algorithmes de hachage pour sécuriser vos mots de passe et autres données sensibles.
